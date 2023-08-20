@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _printf - prints formatted output
+ * _printf - prints formatted output according to the stated specifiers.
  * @format: format string
  * Return: number of characters printed
  */
@@ -14,9 +14,7 @@ int _printf(const char *format, ...)
 	char c, int_str[20];
 	va_list list;
 
-	
 	if (!format || (format[0] == '%' && !format[1]))
-	va_start(list, format);
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
