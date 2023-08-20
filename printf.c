@@ -8,6 +8,8 @@ int _printf(const char *format, ...)
 {
 	int total = 0;
 	int i, j, d;
+	unsigned int u;
+	void *ptr;
 	char *str;
 	char c, int_str[20];
 	va_list list;
@@ -63,6 +65,46 @@ int _printf(const char *format, ...)
 					}
 				}
 			}
+			else if (format[i] == 'u')
+			{
+				u = va_arg(list, unsigned int);
+				sprintf(int_str, "%u", u);
+				for (j = 0; int_str[j] != '\0'; j++)
+				{
+					_putchar(int_str[j]);
+					total++;
+				}
+			}
+			else if (format[i] == 'o')
+			{
+				u = va_arg(list, unsigned int);
+				sprintf(int_str, "%o", u);
+				_putchar('o');
+				total++;
+			}
+			else if (format[i] == 'x' || format[i] == 'X')
+			{
+				u = va_arg(list, unsigned int);
+				if (format[i] == 'x')
+					sprintf(int_str, "%x", u);
+				else
+					printf(int_str, "%X", u);
+				for (j = 0; int_str[j] != '\0'; j++)
+				{
+					_putchar(int_str[j]);
+					total++;
+				}
+			}
+			else if (format[i] == 'p')
+			{
+				ptr = va_arg(list, void *);
+				sprintf(int_str, "%p", (unsigned long)ptr);
+				for (j = 0; int_str[j] != '\0'; j++)
+				{
+					_putchar(int_str[j]);
+					total++;
+				}
+			}
 		}
 		else
 		{
@@ -70,7 +112,6 @@ int _printf(const char *format, ...)
 			total++;
 		}
 	}
-
 	va_end(list);
 	return (total);
 }

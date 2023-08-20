@@ -7,14 +7,16 @@ The `printf()` function produces output according to a format which is described
 + %c: Prints a single character.
 + %s: Prints a string of characters.
 + %%: Prints a percentage sign.
++ %d: Prints integers of base 10
++ %i: Prints integers in other base format
 
-### Compilation:
+> ### Compilation:
 > The codes are compiled using:
-`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c`
+> `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c`
 
 ### Editors:
 + Allowed editors: `vi`, `vim` and `emacs`
-+ The codes use the Betty style. It is checked using <font color="red">betty-style.pl</font> and <font color="red">betty-doc.pl</font>
++ The codes use the Betty style. It is checked using *betty-style.pl* and *betty-doc.pl*
 
 
 ### Contributors:
