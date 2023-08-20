@@ -15,6 +15,12 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	va_start(list, format);
+	
+	if (!format || (format[0] == '%' && !format[1]))
+	va_start(list, format);
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -79,8 +85,11 @@ int _printf(const char *format, ...)
 			{
 				u = va_arg(list, unsigned int);
 				sprintf(int_str, "%o", u);
-				_putchar('o');
-				total++;
+				for (j = 0; int_str[j] != '\0'; j++)
+				{
+					_putchar(int_str[j]);
+					total++;
+				}
 			}
 			else if (format[i] == 'x' || format[i] == 'X')
 			{
