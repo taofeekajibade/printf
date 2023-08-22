@@ -10,6 +10,8 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-
+int cp_str(const char *format, va_list list, int i, int total);
+int integers(const char *format, va_list list, int i, int total);
+int octa_hex(const char *format, va_list list, int i, int total);
 
 #endif
