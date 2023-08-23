@@ -29,8 +29,8 @@ int main(void)
 	/* function calls */
 
 	return (0) /* main always return zero to indicate success */
+}
 	```
-
 ### Editors:
 + Allowed editors: `vi`, `vim` and `emacs`
 + The codes use the Betty style. It is checked using *betty-style.pl* and *betty-doc.pl*
