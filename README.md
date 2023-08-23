@@ -1,4 +1,5 @@
-# A collaborative project on creating a lightweight printf function
+# A collaborative project on creating a lightweight printf function 
+This project was carried out by Akinyemi Kafilat and Ajibade Taofeek
 
 ### Description
 
