@@ -33,14 +33,6 @@ int _printf(const char *format, ...)
                     space = true;
                 else if (format[i] == '#')
                     hash = true;
-                /*else if (format[i] == '0')
-                    zero = true;
-		else if (format[i] == 'l')
-			l_mod = true;
-		else if (format[i] == 'h')
-			h_mod = true;
-                else if (format[i] == '-')
-                    minus = true;*/
                 i++;
             }
             while (format[i] >= '0' && format[i] <= '9')
@@ -48,16 +40,6 @@ int _printf(const char *format, ...)
                 width = width * 10 + (format[i] - '0');
                 i++;
             }
-            /*if (format[i] == 'l')
-            {
-                l_mod = true;
-                i++;
-            }
-            else if (format[i] == 'h')
-            {
-                h_mod = true;
-                i++;
-            }*/
             if (format[i] == 'c')
             {
                 c = va_arg(list, int);
@@ -73,6 +55,11 @@ int _printf(const char *format, ...)
                     total++;
                 }
             }
+	    else if (format[i] == '%')
+	    {
+		    _putchar('%');
+		    total++;
+	    }
             else if (format[i] == 'S')
             {
                 str = va_arg(list, char *);
@@ -93,11 +80,6 @@ int _printf(const char *format, ...)
                         total++;
                     }
                 }
-            }
-            else if (format[i] == '%')
-            {
-                _putchar('%');
-                total++;
             }
             else if (format[i] == 'd' || format[i] == 'i')
             {
@@ -133,6 +115,15 @@ int _printf(const char *format, ...)
                     }
                 }
             }
+	    /*else if (format[i] == 'r')
+	    {
+		    str = va_arg(list, char *);
+		    for (j = strlen(str) - 1; j >= 0; j--)
+		    {
+			    _putchar(str[j]);
+			    total++;
+		    }
+	    }*/
             else if (format[i] == 'u')
             {
                 u = va_arg(list, unsigned int);
