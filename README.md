@@ -21,7 +21,8 @@ The `printf()` function produces output according to a format which is described
 > ### Compilation:
 > The codes are compiled using:
 > `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c`
-> ```cc
+
+```C
 int main(void)
 {
 	/* our code goes here */
